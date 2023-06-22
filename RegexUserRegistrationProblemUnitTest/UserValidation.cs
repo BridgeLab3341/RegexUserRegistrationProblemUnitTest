@@ -14,8 +14,24 @@ namespace RegexUserRegistrationProblemUnitTest
         public string FirstName(string name)
         {
             if(Regex.IsMatch(name,USER_NAME))
+            {
                 return "Valid";
+            }
+            else
+            {
                 return "Invalid";
+            }    
+        }
+        public string LastName(string name)
+        {
+            if (Regex.IsMatch(name,USER_NAME))
+            {
+                return "Valid";
+            }
+            else
+            {
+                return "Invalid";
+            }
         }
     }
 }
