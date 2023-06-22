@@ -34,5 +34,12 @@ namespace UserTestProject
             string result=user.MobileNumber(PhoneNumber);
             Assert.AreEqual(result, "Valid");
         }
+        [TestMethod]
+        public void GivenUserPassword1_WhenAnalyze_ShouldReturnValid()
+        {
+            string password1 = "123456789";
+            string result=user.Password_Rule1(password1);
+            Assert.AreEqual(result , "Valid");
+        }
     }
 }
