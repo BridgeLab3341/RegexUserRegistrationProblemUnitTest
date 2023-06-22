@@ -11,6 +11,7 @@ namespace RegexUserRegistrationProblemUnitTest
     {
         public static string USER_NAME = "^[A-Z]{1}[a-z]{3,}$";
         public static string EMAIL = "^[a-c]{3}[.]{1}[a-z]{3,}[@]{1}[a-z]{2,}[.]{1}[a-z]{2,}[.]{1}[a-z]{2,}$";
+        public static string MOBILE_NUMBER = "^[1-9]{2}[ ]{1}[6-9]{1}[0-9]{9}$";
 
         public string FirstName(string name)
         {
@@ -43,6 +44,17 @@ namespace RegexUserRegistrationProblemUnitTest
             else
             {
                 return "Invalid";
+            }
+        }
+        public string MobileNumber(string number)
+        {
+            if(Regex.IsMatch(number,MOBILE_NUMBER))
+            {
+                return "Valid";
+            }
+            else
+            {
+                return "InValid";
             }
         }
     }

@@ -27,5 +27,12 @@ namespace UserTestProject
             string result = user.Email(email);
             Assert.AreEqual(result, "Valid");
         }
+        [TestMethod]
+        public void GivenUserPhoneNumber_WhenAnalyze_ShouldReturnValid()
+        {
+            string PhoneNumber = "91 9933772634";
+            string result=user.MobileNumber(PhoneNumber);
+            Assert.AreEqual(result, "Valid");
+        }
     }
 }
