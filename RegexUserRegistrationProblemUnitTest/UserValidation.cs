@@ -9,7 +9,8 @@ namespace RegexUserRegistrationProblemUnitTest
 {
     public class UserValidation
     {
-        public static string USER_NAME = "^[A-Z]{1}[a-z]{3,}";
+        public static string USER_NAME = "^[A-Z]{1}[a-z]{3,}$";
+        public static string EMAIL = "^[a-c]{3}[.]{1}[a-z]{3,}[@]{1}[a-z]{2,}[.]{1}[a-z]{2,}[.]{1}[a-z]{2,}$";
 
         public string FirstName(string name)
         {
@@ -25,6 +26,17 @@ namespace RegexUserRegistrationProblemUnitTest
         public string LastName(string name)
         {
             if (Regex.IsMatch(name,USER_NAME))
+            {
+                return "Valid";
+            }
+            else
+            {
+                return "Invalid";
+            }
+        }
+        public string Email(string name)
+        {
+            if (Regex.IsMatch(name, EMAIL))
             {
                 return "Valid";
             }

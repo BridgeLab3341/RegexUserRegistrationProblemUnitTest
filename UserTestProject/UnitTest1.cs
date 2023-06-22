@@ -20,5 +20,12 @@ namespace UserTestProject
             string result = user.LastName(last);
             Assert.AreEqual(result, "Valid");
         }
+        [TestMethod]
+        public void GivenUserEmail_WhenAnalyze_ShouldReturnValid()
+        {
+            string email = "abc.xyz@bl.co.in";
+            string result = user.Email(email);
+            Assert.AreEqual(result, "Valid");
+        }
     }
 }
