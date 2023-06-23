@@ -15,7 +15,7 @@ namespace RegexUserRegistrationProblemUnitTest
         public static string PASSWORD_RULE1 = "^[0-9]{8}$";
         public static string PASSWORD_RULE2 = "^[A-Z]{1,}[a-z0-9]{7,}$";
         public static string PASSWORD_RULE3 = "^[A-Za-z]{4,}[0-9]{4,}$";
-
+        public static string PASSWORD_SPECIALCHAR = "^[A-Za-z0-9]{4,}[@+~+!+#+$+%+&+*+_+-+=+?]{1,}[0-9]{3,}$";
         public string FirstName(string name)
         {
             if(Regex.IsMatch(name,USER_NAME))
@@ -85,6 +85,17 @@ namespace RegexUserRegistrationProblemUnitTest
         public string Password_Rule3(string password)
         {
             if (Regex.IsMatch(password, PASSWORD_RULE3))
+            {
+                return "Valid";
+            }
+            else
+            {
+                return "InValid";
+            }
+        }
+        public string Password_SpecialChar(string password)
+        {
+            if (Regex.IsMatch(password, PASSWORD_SPECIALCHAR))
             {
                 return "Valid";
             }

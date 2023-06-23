@@ -55,5 +55,12 @@ namespace UserTestProject
             string result = user.Password_Rule3(password3);
             Assert.AreEqual(result, "Valid");
         }
+        [TestMethod]
+        public void GivenUserPasswordSpacialChar_WhenAnalyze_ShouldReturnValid()
+        {
+            string pass_Special = "Somu@3411";
+            string result = user.Password_SpecialChar(pass_Special);
+            Assert.AreEqual(result, "Valid");
+        }
     }
 }
