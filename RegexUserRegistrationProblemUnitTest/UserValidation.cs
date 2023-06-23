@@ -14,6 +14,7 @@ namespace RegexUserRegistrationProblemUnitTest
         public static string MOBILE_NUMBER = "^[1-9]{2}[ ]{1}[6-9]{1}[0-9]{9}$";
         public static string PASSWORD_RULE1 = "^[0-9]{8}$";
         public static string PASSWORD_RULE2 = "^[A-Z]{1,}[a-z0-9]{7,}$";
+        public static string PASSWORD_RULE3 = "^[A-Za-z]{4,}[0-9]{4,}$";
 
         public string FirstName(string name)
         {
@@ -70,9 +71,20 @@ namespace RegexUserRegistrationProblemUnitTest
                 return "InValid";
             }
         }
-        public string Password_Rule2(string password1)
+        public string Password_Rule2(string password)
         {
-            if (Regex.IsMatch(password1, PASSWORD_RULE2))
+            if (Regex.IsMatch(password, PASSWORD_RULE2))
+            {
+                return "Valid";
+            }
+            else
+            {
+                return "InValid";
+            }
+        }
+        public string Password_Rule3(string password)
+        {
+            if (Regex.IsMatch(password, PASSWORD_RULE3))
             {
                 return "Valid";
             }
