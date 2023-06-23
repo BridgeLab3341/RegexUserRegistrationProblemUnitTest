@@ -10,7 +10,7 @@ namespace RegexUserRegistrationProblemUnitTest
     public class UserValidation
     {
         public static string USER_NAME = "^[A-Z]{1}[a-z]{3,}$";
-        public static string EMAIL = "^[a-c]{3}[.]{1}[a-z]{3,}[@]{1}[a-z]{2,}[.]{1}[a-z]{2,}[.]{1}[a-z]{2,}$";
+        public static string EMAIL = "^[a-zA-Z]+[.+_]{1}[a-zA-Z]+[@]{1}[a-z]+[.][a-z]{2,3}([.][a-z]{2,3}){0,1}$";
         public static string MOBILE_NUMBER = "^[1-9]{2}[ ]{1}[6-9]{1}[0-9]{9}$";
         public static string PASSWORD_RULE1 = "^[0-9]{8}$";
         public static string PASSWORD_RULE2 = "^[A-Z]{1,}[a-z0-9]{7,}$";
@@ -103,6 +103,22 @@ namespace RegexUserRegistrationProblemUnitTest
             {
                 return "InValid";
             }
+        }
+        public string AllMail(string[] arr)
+        {
+            for(int i=0; i<arr.Length; i++)
+            {
+                string word = arr[i];
+                if(Regex.IsMatch(word,EMAIL))
+                {
+                    return "Valid";
+                }
+                else
+                {
+                    return "InValid";
+                }
+            }
+            return "";
         }
     }
 }
