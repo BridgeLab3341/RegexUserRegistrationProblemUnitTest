@@ -35,11 +35,18 @@ namespace UserTestProject
             Assert.AreEqual(result, "Valid");
         }
         [TestMethod]
-        public void GivenUserPassword1_WhenAnalyze_ShouldReturnValid()
+        public void GivenUserPasswordRule1_WhenAnalyze_ShouldReturnValid()
         {
-            string password1 = "123456789";
+            string password1 = "13161316";
             string result=user.Password_Rule1(password1);
-            Assert.AreEqual(result , "Valid");
+            Assert.AreEqual(result, "Valid");
+        }
+        [TestMethod]
+        public void GivenUserPasswordRule2_WhenAnalyze_ShouldReturnValid()
+        {
+            string password2 = "Somu3411";
+            string result = user.Password_Rule2(password2);
+            Assert.AreEqual(result, "Valid");
         }
     }
 }
